@@ -45,5 +45,5 @@ classDiagram
     HardwareManager <|.. MotorManager : Motor HW System
     HardwareManager <|.. SwervePods : Swerve HW System
     Drivetrain <|.. TankDrivetrain : Tank Drive
-    HardwareManager -- Drivetrain : DT contains Hardware Sys
+    Drivetrain -- HardwareManager : DT contains Hardware Sys
 ```
