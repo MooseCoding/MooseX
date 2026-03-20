@@ -13,6 +13,7 @@ classDiagram
         +hwManager: HardwareManager
     }
     class HardwareManager {
+        <<interface>>
         - fl, bl, fr, br motors
         - Stuff that u need for directly interacting with the motors
         - Maybe put PID systems for runToVel if needed?
@@ -49,6 +50,5 @@ classDiagram
     HardwareManager <|.. MotorManager : Motor HW System
     HardwareManager <|.. SwervePods : Swerve HW System
     Drivetrain <|.. TankDrivetrain : Tank Drive
-    HardwareManager o..o Drivetrain : DT contains Hardware Sys
-    
+    HardwareManager -- Drivetrain : DT contains Hardware Sys
 ```
