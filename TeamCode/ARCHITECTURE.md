@@ -91,7 +91,7 @@ classDiagram
         > fl, bl, fr, br: MotorEx <-- prob define custom MotorEncFactory
         - Custom MotorEncFactory to de-limit setPowers from here, and to enhance default methods
     }
-    class OTOSLocalizer??? {
+    class OTOSLocalizer {
         impl: Localizer
         > OTOSDriver: Localizer
         - IDK if we adding ts bcos xandy said its for bums
@@ -102,5 +102,5 @@ classDiagram
     Localizer <|.. ThreeWheelLocalizer : 3-wheel
     Localizer <|.. ThreeWheelIMULocalizer : 3-wheel + IMU
     Localizer <|.. DriveEncLocalizer : Drive Encoder
-    Localizer <|.. OTOSLocalizer??? : OTOS - idk if we doing it
+    Localizer <|.. OTOSLocalizer : OTOS - idk if we doing it
 ```
