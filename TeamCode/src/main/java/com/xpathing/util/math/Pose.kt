@@ -1,6 +1,9 @@
 package com.xpathing.util.math
 
+<<<<<<< HEAD
 import com.xpathing.main.follower.paths.Pose
+=======
+>>>>>>> 76fcf68cfb766210971a5f09e054adc7cb309329
 import kotlin.math.PI
 
 class Pose(var x: Double, var y: Double, var theta:Double = 0.0, var z: Double = 0.0) {
@@ -35,6 +38,7 @@ class Pose(var x: Double, var y: Double, var theta:Double = 0.0, var z: Double =
         theta = normalize(PI / 2.0 - theta)
         return this
     }
+<<<<<<< HEAD
     fun addPose(other: com.xpathing.main.follower.paths.Pose): com.xpathing.main.follower.paths.Pose {
         return Pose(
             x + other.x,
@@ -72,10 +76,17 @@ class Pose(var x: Double, var y: Double, var theta:Double = 0.0, var z: Double =
     }
 
    companion object { fun normalize(angle: Double): Double {
+=======
+
+    fun normalize(angle: Double): Double {
+>>>>>>> 76fcf68cfb766210971a5f09e054adc7cb309329
         var a = angle % (2 * PI)
         if (a > PI) a -= 2 * PI
         if (a <= -PI) a += 2 * PI
         return a
     }
+<<<<<<< HEAD
    }
+=======
+>>>>>>> 76fcf68cfb766210971a5f09e054adc7cb309329
 }   
