@@ -3,6 +3,7 @@
 ## Drive System
 ```mermaid
 classDiagram
+    direction LR
     class Drivetrain {
         <<interface>>
         +hwManager: HardwareManager
