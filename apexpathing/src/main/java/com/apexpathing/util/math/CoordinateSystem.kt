@@ -31,6 +31,13 @@ interface CoordinateSystem {
      * @return The converted pose in said coordinate system
      */
     fun fromApexCoordinates(pose: Pose): Pose
+
+    /**
+     * Returns name of the coordinate system in String format for debugging
+     *
+     * @return name of coordinate system
+     */
+    fun name(): String
 }
 
 /**
@@ -61,6 +68,13 @@ object ApexCoordinates : CoordinateSystem {
      * @return the position in Apex coordinates
      */
     override fun fromApexCoordinates(pose: Pose): Pose = pose
+
+    /**
+     * Returns name of the coordinate system in String format for debugging
+     *
+     * @return name of coordinate system -> "ApexCoordinates"
+     */
+    override fun name(): String = "ApexCoordinates"
 }
 
 /**
@@ -99,4 +113,11 @@ object PedroCoordinates : CoordinateSystem {
         val rawPose = (pose - Pose(72.0, 72.0)).rotated(-PI / 2)
         return Pose(rawPose.x, rawPose.y, rawPose.heading, this)
     }
+
+    /**
+     * Returns name of the coordinate system in String format for debugging
+     *
+     * @return name of coordinate system -> "PedroCoordinates"
+     */
+    override fun name(): String = "PedroCoordinates"
 }

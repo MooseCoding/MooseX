@@ -269,4 +269,19 @@ data class Pose(
         if (a <= -PI) a += 2 * PI
         return a
     }
+
+    /**
+     * Function to convert the position to a string for easy viewing
+     *
+     * @return String format of the pose
+     */
+    override fun toString(): String = "($x, $y, $heading)"
+
+
+    /**
+     * Debug Function to convert the position into a string that the user can use for debugging
+     *
+     * @return The string with x-y, heading, and coordSys information
+     */
+    fun debug(): String = "Pose { x: $x, y: $y, heading: $heading } in ${coordSystem.toString()}"
 }
