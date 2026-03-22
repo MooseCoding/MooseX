@@ -12,9 +12,12 @@ public class SquidController {
     private double integralSum = 0;
     private double derivative;
     private double lastError = 0;
-    private double error;
+    private double error = 0;
+    private double deadBand = 0.05;
+
     private double lastTimestamp = 0;
     private final ElapsedTime timer;
+
 
     public SquidController(double kP, double kI, double kD) {
         this.kP = kP;
@@ -58,6 +61,10 @@ public class SquidController {
         lastTimestamp = timestamp;
         lastError = error;
 
+        //deadband, turns the motors off when the power is too slow to move the robot
+        if(Math.abs(kP + kI + kDOut) < deadBand){
+            return 0;
+        }
         return kPOut + kIOut + kDOut ;
     }
 }
