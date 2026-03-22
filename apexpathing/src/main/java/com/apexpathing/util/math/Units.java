@@ -3,7 +3,7 @@ package com.apexpathing.util.math;
 public class Units {
     public enum DistanceUnits {
         INCHES,
-        CENTIMETRES,
+        CENTIMETERS,
         METERS,
         MILLIMETERS,
         FEET
@@ -12,16 +12,16 @@ public class Units {
         switch (unit) {
             case INCHES: return value;
             case CENTIMETERS: return value / 2.54;
-            case METRES: return value / 0.0254;
+            case METERS: return value / 0.0254;
             case MILLIMETERS: return value / 25.4;
             case FEET: return value * 12;
             default: return value;
         }
     }
 
-    public static double toMetres(DistanceUnits unit, double value) {
+    public static double toMeters(DistanceUnits unit, double value) {
         switch (unit) {
-            case METRES: return value;
+            case METERS: return value;
             case INCHES: return value * 0.0254;
             case CENTIMETERS: return value / 100;
             case MILLIMETERS: return value / 1000;
@@ -30,7 +30,7 @@ public class Units {
         }
     }
 
-    public static double toCentimetres(DistanceUnits unit, double value) {
+    public static double toCentimeters(DistanceUnits unit, double value) {
         switch (unit) {
             case CENTIMETERS: return value;
             case INCHES: return value * 2.54;
@@ -41,7 +41,7 @@ public class Units {
         }
     }
 
-    public static double toMillimetres(DistanceUnits unit, double value) {
+    public static double toMillimeters(DistanceUnits unit, double value) {
         switch (unit) {
             case MILLIMETERS: return value;
             case INCHES: return value * 25.4;
