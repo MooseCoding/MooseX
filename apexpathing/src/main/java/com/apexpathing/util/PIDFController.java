@@ -54,7 +54,7 @@ public class PIDFController {
         derivative = (error - lastError) / deltaTime;
         double kDOut = kD * derivative;
 
-        double kFOut = kF * goal;
+        double kFOut = kF * Math.signum(error);
 
         lastTimestamp = timestamp;
         lastError = error;
